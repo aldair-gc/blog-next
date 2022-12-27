@@ -6,8 +6,6 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "strapi-project-server.aldairgc.com",
-        port: "",
-        pathname: "",
       },
     ],
   },

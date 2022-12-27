@@ -4,7 +4,7 @@ import { getPost } from "../../data/posts/get-post";
 import { PostData } from "../../domain/posts/posts";
 
 type PostProps = {
-  id: string;
+  id: number;
   post: PostData;
 };
 
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }: { params: { id: string } }) {
+export async function getStaticProps({ params }: { params: { id: number } }) {
   const post = await getPost(params.id);
   return {
     props: { post },
