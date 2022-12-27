@@ -3,8 +3,16 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+  padding-top: 70px;
+  min-height: calc(100vh - 50px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  max-width: 1200px;
+  /* grid-auto-columns: max-content; */
+  gap: 20px;
 }
 
 /* Enable hover only on non-touch devices */

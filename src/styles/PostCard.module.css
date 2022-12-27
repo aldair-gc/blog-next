@@ -1,0 +1,19 @@
+.post {
+  transition: opacity 300ms ease-in-out;
+}
+
+.post:hover {
+  opacity: 0.8;
+}
+
+.post img {
+  width: 100%;
+  display: block;
+}
+
+.post h2 {
+  font-weight: 400;
+  font-size: var(--small-font-size);
+  padding: var(--small-spacing);
+  width: 100%;
+}

@@ -1,0 +1,70 @@
+:root {
+  /* FONTS */
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
+    "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --primary-font-color: #000000ff;
+  --primary-font-color-weak: #333333ff;
+  --primary-font-color-link: #0000ffff;
+  --secondary-font-color: #662299ff;
+  --inverse-font-color: #ffffffff;
+  --small-font-size: 1rem;
+  --medium-font-size: 1.8rem;
+  --large-font-size: 2rem;
+  --extraLarge-font-size: 5rem;
+
+  /* SPACINGS */
+  --max-width: 1100px;
+  --small-spacing: 1rem;
+  --medium-spacing: 2rem;
+  --large-spacing: 3rem;
+
+  /* BACKGROUNDS */
+  --background-rgba: rgba(0, 0, 0, 0.5);
+  --background-weak-rgba: rgba(150, 150, 150, 0.5);
+  --background-inverse-rgba: rgba(255, 255, 255, 0.5);
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+  --background-inverse-rgb: rgb(0, 0, 0);
+  --background-start-rgb: 240, 220, 235;
+  --background-end-rgb: 255, 255, 255;
+
+  /* OTHERS */
+  --border-radius: 12px;
+  --primary-glow: conic-gradient(
+    from 180deg at 50% 50%,
+    #16abff33 0deg,
+    #0885ff33 55deg,
+    #54d6ff33 120deg,
+    #0071ff33 160deg,
+    transparent 360deg
+  );
+  --secondary-glow: radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* FONTS */
+    --primary-font-color: #ffffffff;
+    --secondary-font-color: #662299ff;
+    --inverse-font-color: #000000ff;
+
+    /* SPACINGS */
+
+    /* BACKGROUNDS */
+    --background-rgba: rgba(255, 255, 255, 0.5);
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 0, 0, 0;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
+    --secondary-glow: linear-gradient(to bottom right, rgba(1, 65, 255, 0), rgba(1, 65, 255, 0), rgba(1, 65, 255, 0.3));
+
+    /* OTHERS */
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
