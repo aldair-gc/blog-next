@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { API_URL } from "../config/app-config";
 import { PostData } from "../domain/posts/posts";
 import styles from "../styles/Post.module.css";
@@ -26,7 +27,11 @@ export default function Post({ postData }: { postData: PostData }) {
           {postData.attributes.author.data.attributes.name}
         </h6>
 
-        <h6>Category: {postData.attributes.category.data.attributes.name}</h6>
+        <h6>
+          <Link href={`/categories/${postData.attributes.category.data.attributes.name}`}>
+            Category: {postData.attributes.category.data.attributes.name}
+          </Link>
+        </h6>
       </div>
 
       <div className={styles.content} dangerouslySetInnerHTML={{ __html: postData.attributes.content }} />
