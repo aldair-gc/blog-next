@@ -4,11 +4,11 @@ import { fetchJson } from "../../utils/fetch-json";
 import { markDownToHtml } from "../../utils/markdown-to-html";
 
 export const getPost = async (id: number): Promise<PostData> => {
-  const data = await fetchJson<PostData>(POST_URL(`${id}?populate=%2A`));
+  const post = await fetchJson<{ data: PostData }>(POST_URL(`${id}?populate=%2A`));
 
-  if (!data) return data;
+  if (!post.data) return post.data;
 
-  const content = await markDownToHtml(data.attributes.content);
-  data.attributes.content = content;
-  return data;
+  const content = await markDownToHtml(post.data.attributes.content);
+  post.data.attributes.content = content;
+  return post.data;
 };

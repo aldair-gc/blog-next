@@ -28,7 +28,10 @@ export default function Post({ postData }: { postData: PostData }) {
         </h6>
 
         <h6>
-          <Link href={`/categories/${postData.attributes.category.data.attributes.name}`}>
+          <Link
+            as={`/posts/page/1/${postData.attributes.category.data.attributes.name.toLowerCase()}`}
+            href={"/posts/page/[...params]"}
+          >
             Category: {postData.attributes.category.data.attributes.name}
           </Link>
         </h6>
