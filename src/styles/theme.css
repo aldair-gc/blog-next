@@ -29,14 +29,15 @@
   --background-end-rgb: 255, 255, 255;
 
   /* OTHERS */
+  --shadow-big: 0 20px 50px 20px rgba(0, 0, 0, 0.3);
   --border-radius: 12px;
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
+    #004f1a33 0deg,
+    #102e006a 90deg,
+    #86ec0063 180deg,
+    #0a550074 280deg,
+    #004f1a33 360deg
   );
   --secondary-glow: radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 }
