@@ -11,4 +11,5 @@
   transform-origin: 0 0 -300px;
   backdrop-filter: blur(20px);
   z-index: 10;
+  transition: all 0.3s;
 }
