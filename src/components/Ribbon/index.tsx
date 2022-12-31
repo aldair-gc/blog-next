@@ -26,13 +26,14 @@ export default class Ribbon extends Component<Props, State> {
   trailStep = 360 / this.props.contents.length;
 
   trail(part: number, total: number) {
-    return `rotateY(${(360 / total) * part + this.state.floatingLeft}deg) translate3d(-50%, -50%, 300px)`;
+    return `rotateY(${-(360 / total) * part + this.state.floatingLeft}deg) translate3d(-50%, -50%, -10px)`;
   }
 
   componentDidMount(): void {
     const component = document.querySelector(`.${this.props.name}`) as HTMLDivElement;
 
     component.addEventListener("wheel", (eventWheel) => {
+      eventWheel.preventDefault();
       eventWheel.deltaY > 0 && this.setState({ floatingLeft: this.state.floatingLeft + this.trailStep });
       eventWheel.deltaY < 0 && this.setState({ floatingLeft: this.state.floatingLeft - this.trailStep });
     });
@@ -40,18 +41,21 @@ export default class Ribbon extends Component<Props, State> {
 
   render() {
     return (
-      <div className={styles.container + " " + this.props.name}>
-        {this.props.contents.map((item, index, array) => (
-          <Rectangle
-            key={index}
-            width={this.props.width}
-            height={this.props.height}
-            transform={this.trail(index, array.length)}
-            radius={"-300px"}
-          >
-            <a href="/">{item}</a>
-          </Rectangle>
-        ))}
+      <div className={styles.container}>
+        <div className={styles.ribbon + " " + this.props.name}>
+          {this.props.contents.map((item, index, array) => (
+            <Rectangle
+              key={index}
+              width={this.props.width}
+              height={this.props.height}
+              transform={this.trail(index, array.length)}
+              radius={"-100vw"}
+              backfaceVisibility="hidden"
+            >
+              <a href="/">{item}</a>
+            </Rectangle>
+          ))}
+        </div>
       </div>
     );
   }

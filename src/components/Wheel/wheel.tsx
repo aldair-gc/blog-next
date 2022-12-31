@@ -39,6 +39,7 @@ export default class Wheel extends Component<Props, State> {
     const component = document.querySelector(`.${this.props.name}`) as HTMLDivElement;
 
     component.addEventListener("wheel", (eventWheel) => {
+      eventWheel.preventDefault();
       eventWheel.deltaY > 0 && this.setState({ wheelTop: this.state.wheelTop + this.wheelStep });
       eventWheel.deltaY < 0 && this.setState({ wheelTop: this.state.wheelTop - this.wheelStep });
     });

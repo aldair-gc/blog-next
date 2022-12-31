@@ -9,4 +9,5 @@
   background: var(--background-rgba);
   color: var(--inverse-font-color);
   backdrop-filter: blur(15px);
+  z-index: 100;
 }
