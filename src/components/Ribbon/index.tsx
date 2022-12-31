@@ -1,7 +1,7 @@
-import styles from "../styles/Floating.module.css";
+import styles from "./ribbon.module.css";
 
 import { Component } from "react";
-import Rectangle from "./rectangle";
+import Rectangle from "../Rectangle";
 
 type Props = {
   name: string;
@@ -14,7 +14,7 @@ type State = {
   floatingLeft: number;
 };
 
-export default class Floating extends Component<Props, State> {
+export default class Ribbon extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -23,10 +23,10 @@ export default class Floating extends Component<Props, State> {
   }
 
   trailWidth = parseInt(this.props.width) * this.props.contents.length;
-  trailStep = parseInt(this.props.width);
+  trailStep = 360 / this.props.contents.length;
 
   trail(part: number, total: number) {
-    return `translate3d(20px, calc(-50% + ${(this.trailWidth / total) * part + this.state.floatingLeft}%), 50px)`;
+    return `rotateY(${(360 / total) * part + this.state.floatingLeft}deg) translate3d(-50%, -50%, 300px)`;
   }
 
   componentDidMount(): void {
@@ -47,6 +47,7 @@ export default class Floating extends Component<Props, State> {
             width={this.props.width}
             height={this.props.height}
             transform={this.trail(index, array.length)}
+            radius={"-300px"}
           >
             <a href="/">{item}</a>
           </Rectangle>

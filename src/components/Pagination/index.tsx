@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { SITE_URL } from "../config/app-config";
-import { PostsMeta } from "../domain/posts/meta";
-import styles from "../styles/Pagination.module.css";
+import { SITE_URL } from "../../config/app-config";
+import { PostsMeta } from "../../domain/posts/meta";
+import styles from "./Pagination.module.css";
 
 type PaginationProps = {
   pagination: PostsMeta["pagination"];

@@ -1,8 +1,9 @@
 import Head from "next/head";
-import Link from "next/link";
-import Panel from "../components/panel";
+import Panel from "../components/Panel";
 import { SITE_NAME } from "../config/app-config";
 import styles from "../styles/Home.module.css";
+import SquaresPanel from "../components/SquaresPanel";
+import Ribbon from "../components/Ribbon";
 
 export default function Home() {
   return (
@@ -15,7 +16,8 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Panel />
-        <Link href={"/posts/page/1"}>Posts</Link>
+        <SquaresPanel />
+        <Ribbon name={"ribbon"} contents={[1, 2, 3, 4, 5, 6, 7]} width={"500px"} height={"300px"} />
       </main>
     </>
   );

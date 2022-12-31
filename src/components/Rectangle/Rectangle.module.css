@@ -8,8 +8,8 @@
   top: 50%;
   left: 50%;
   border-radius: 10px;
-  transform-origin: 0 0 -300px;
   backdrop-filter: blur(20px);
   z-index: 10;
   transition: all 0.3s;
+  color: var(--inverse-font-color);
 }

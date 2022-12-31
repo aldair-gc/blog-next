@@ -1,13 +1,14 @@
-import styles from "../styles/Wheel.module.css";
+import styles from "./Wheel.module.css";
 
 import { Component } from "react";
-import Rectangle from "./rectangle";
+import Rectangle from "../Rectangle";
 
 type Props = {
   name: string;
   contents: any[];
   width: string;
   height: string;
+  radius: string;
 };
 
 type State = {
@@ -42,17 +43,22 @@ export default class Wheel extends Component<Props, State> {
       eventWheel.deltaY < 0 && this.setState({ wheelTop: this.state.wheelTop - this.wheelStep });
     });
 
+    // fix touch wheel
     component.addEventListener("touchstart", (eventTouch) => {
       eventTouch.preventDefault();
       this.setState({ picking: true });
       component.addEventListener("touchmove", (eventMove) => {
         eventMove.preventDefault();
         const moving = eventTouch.touches[0].clientY - eventMove.touches[0].clientY;
-        this.setState({ wheelTop: moving });
+        this.setState({ wheelChange: moving });
         component.addEventListener("touchend", (eventEnd) => {
           eventEnd.preventDefault();
           if (this.state.picking) {
-            this.setState({ wheelTop: Math.round(this.state.wheelTop / this.props.contents.length) });
+            this.setState((state) => ({
+              wheelTop: state.wheelTop + Math.round(state.wheelChange / this.props.contents.length),
+              wheelChange: 0,
+              picking: false,
+            }));
           } else {
             eventEnd.stopImmediatePropagation();
           }
@@ -71,6 +77,7 @@ export default class Wheel extends Component<Props, State> {
             width={this.props.width}
             height={this.props.height}
             transform={this.cylinder(index, array.length)}
+            radius={this.props.radius}
           >
             <a href="/">{item}</a>
           </Rectangle>

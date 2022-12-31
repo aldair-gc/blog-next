@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { SITE_NAME } from "../config/app-config";
-import styles from "../styles/Navbar.module.css";
+import { SITE_NAME } from "../../config/app-config";
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   return (

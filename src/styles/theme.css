@@ -6,7 +6,7 @@
   --primary-font-color-weak: #333333ff;
   --primary-font-color-link: #0000ffff;
   --secondary-font-color: #662299ff;
-  --inverse-font-color: #ffffffff;
+  --inverse-font-color: #eeeeeeff;
   --small-font-size: 1rem;
   --medium-font-size: 1.8rem;
   --large-font-size: 2rem;
@@ -22,8 +22,9 @@
   --background-rgba: rgba(0, 0, 0, 0.5);
   --background-weak-rgba: rgba(150, 150, 150, 0.5);
   --background-inverse-rgba: rgba(255, 255, 255, 0.5);
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
+  --foreground-rgb: rgb(0, 0, 0);
+  --background-rgb: rgb(255, 255, 255);
+  --background-rgb: rgb(80, 80, 80);
   --background-inverse-rgb: rgb(0, 0, 0);
   --background-start-rgb: 240, 220, 235;
   --background-end-rgb: 255, 255, 255;

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Post from "./post";
+import Post from ".";
 
 describe("<Post />", () => {
   it("should render a post", () => {

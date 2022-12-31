@@ -1,8 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Pagination from "../../../components/pagination";
-import PostCard from "../../../components/postCard";
+import Pagination from "../../../components/Pagination";
+import PostCard from "../../../components/PostCard";
 import { SITE_NAME } from "../../../config/app-config";
 import { getAllPosts } from "../../../data/posts/get-all-posts";
 import { PostsMeta } from "../../../domain/posts/meta";

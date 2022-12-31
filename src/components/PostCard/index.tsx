@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { API_URL } from "../config/app-config";
-import styles from "../styles/PostCard.module.css";
+import { API_URL } from "../../config/app-config";
+import styles from "./PostCard.module.css";
 
 type PostCardProps = {
   title: string;

@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { API_URL } from "../config/app-config";
-import { PostData } from "../domain/posts/posts";
-import styles from "../styles/Post.module.css";
-import { formatDate } from "../utils/format-date";
-import Disqus from "./disqus";
+import { API_URL } from "../../config/app-config";
+import { PostData } from "../../domain/posts/posts";
+import styles from "./Post.module.css";
+import { formatDate } from "../../utils/format-date";
+import Disqus from "../Disqus";
 
 export default function Post({ postData }: { postData: PostData }) {
   return (

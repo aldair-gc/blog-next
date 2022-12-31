@@ -1,0 +1,8 @@
+.container {
+  color: var(--inverse-font-color);
+  font-size: var(--large-font-size);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

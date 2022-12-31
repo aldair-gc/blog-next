@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Error from "next/error";
-import Post from "../../components/post";
+import Post from "../../components/Post";
 import { getAllPosts } from "../../data/posts/get-all-posts";
 import { getPost } from "../../data/posts/get-post";
 import { PostData } from "../../domain/posts/posts";

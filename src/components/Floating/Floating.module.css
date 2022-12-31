@@ -3,7 +3,7 @@
   height: 100%;
   transition: all 0.3s;
   z-index: 9;
-  perspective: 250px;
+  perspective: 150px;
   transform-style: preserve-3d;
   left: 0;
 }
