@@ -79,6 +79,7 @@ export default class Wheel extends Component<Props, State> {
             height={this.props.height}
             transform={this.cylinder(index, array.length)}
             radius={this.props.radius}
+            backfaceVisibility="visible"
           >
             <a href="/">{item}</a>
           </Rectangle>

@@ -1,7 +1,7 @@
 import styles from "./ribbon.module.css";
 
 import { Component } from "react";
-import Rectangle from "../Rectangle";
+import Item from "./item";
 
 type Props = {
   name: string;
@@ -11,22 +11,20 @@ type Props = {
 };
 
 type State = {
-  floatingLeft: number;
+  move: number;
 };
 
 export default class Ribbon extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      floatingLeft: 0,
+      move: 0,
     };
   }
 
-  trailWidth = parseInt(this.props.width) * this.props.contents.length;
-  trailStep = 360 / this.props.contents.length;
-
-  trail(part: number, total: number) {
-    return `rotateY(${-(360 / total) * part + this.state.floatingLeft}deg) translate3d(-50%, -50%, -10px)`;
+  position(part: number, total: number) {
+    const position = (-360 / total) * part + this.state.move;
+    return `rotateY(${position}deg) translate3D(-50%, -50%, 0)`;
   }
 
   componentDidMount(): void {
@@ -34,9 +32,11 @@ export default class Ribbon extends Component<Props, State> {
 
     component.addEventListener("wheel", (eventWheel) => {
       eventWheel.preventDefault();
-      eventWheel.deltaY > 0 && this.setState({ floatingLeft: this.state.floatingLeft + this.trailStep });
-      eventWheel.deltaY < 0 && this.setState({ floatingLeft: this.state.floatingLeft - this.trailStep });
+      eventWheel.deltaY > 0 && this.setState({ move: this.state.move + 1 });
+      eventWheel.deltaY < 0 && this.setState({ move: this.state.move - 1 });
     });
+
+    setInterval(() => this.setState({ move: this.state.move + 1 }), 500);
   }
 
   render() {
@@ -44,16 +44,16 @@ export default class Ribbon extends Component<Props, State> {
       <div className={styles.container}>
         <div className={styles.ribbon + " " + this.props.name}>
           {this.props.contents.map((item, index, array) => (
-            <Rectangle
+            <Item
               key={index}
               width={this.props.width}
               height={this.props.height}
-              transform={this.trail(index, array.length)}
-              radius={"-100vw"}
+              transform={this.position(index, array.length)}
+              radius={"-50vw"}
               backfaceVisibility="hidden"
             >
               <a href="/">{item}</a>
-            </Rectangle>
+            </Item>
           ))}
         </div>
       </div>

@@ -1,6 +1,8 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   max-width: 1200px;
   gap: 20px;
 }

@@ -17,7 +17,7 @@ export default function Home() {
       <main className={styles.main}>
         <Panel />
         <SquaresPanel />
-        <Ribbon name={"ribbon"} contents={[1, 2, 3, 4, 5, 6, 7]} width={"500px"} height={"300px"} />
+        <Ribbon name={"ribbon"} contents={[1, 2, 3, 4, 5, 6, 7, 8]} width={"400px"} height={"300px"} />
       </main>
     </>
   );
