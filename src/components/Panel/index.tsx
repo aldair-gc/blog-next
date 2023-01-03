@@ -6,7 +6,7 @@ export default function Panel() {
 
   return (
     <div className={styles.container}>
-      <Wheel name="desktop" contents={desktopList} width="450px" height="280px" radius="-300px" />
+      <Wheel name="desktop" contents={desktopList} width="450px" height="280px" radius="-350px" />
     </div>
   );
 }

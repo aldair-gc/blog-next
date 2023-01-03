@@ -7,13 +7,22 @@ type Props = {
   transform: string;
   radius: string;
   backfaceVisibility: "hidden" | "visible";
+  transition: string;
 };
 
-export default function Rectangle({ children, width, height, transform, radius, backfaceVisibility }: Props) {
+export default function Rectangle({
+  children,
+  width,
+  height,
+  transform,
+  radius,
+  backfaceVisibility,
+  transition,
+}: Props) {
   return (
     <div
       className={styles.container}
-      style={{ width, height, transform, transformOrigin: `0 0 ${radius}`, backfaceVisibility }}
+      style={{ width, height, transform, transformOrigin: `0 0 ${radius}`, backfaceVisibility, transition }}
     >
       {children}
     </div>

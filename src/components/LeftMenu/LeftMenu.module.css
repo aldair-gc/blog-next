@@ -1,0 +1,20 @@
+.container {
+  position: fixed;
+  top: 50px;
+  width: 300px;
+  height: 100vh;
+  background: var(--background-rgb);
+  z-index: 101;
+  transition: all linear 0.2s;
+  box-shadow: var(--shadow-big);
+}
+
+.container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  list-style: none;
+  padding: 50px;
+  color: var(--inverse-font-color);
+  font-size: var(--medium-font-size);
+}

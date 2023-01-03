@@ -20,11 +20,13 @@
 
   /* BACKGROUNDS */
   --background-rgba: rgba(0, 0, 0, 0.5);
-  --background-weak-rgba: rgba(150, 150, 150, 0.5);
+  --background-weak-rgba: rgba(200, 200, 200, 0.5);
   --background-inverse-rgba: rgba(255, 255, 255, 0.5);
   --foreground-rgb: rgb(0, 0, 0);
   --background-rgb: rgb(255, 255, 255);
   --background-rgb: rgb(80, 80, 80);
+  --background-weak-rgb: rgb(200, 200, 200);
+  --background-radial-rgb: radial-gradient(circle at center, rgb(100, 100, 100) 0%, rgb(200, 200, 200) 30%);
   --background-strong-rgb: rgb(20, 20, 20);
   --background-inverse-rgb: rgb(0, 0, 0);
   --background-start-rgb: 240, 220, 235;

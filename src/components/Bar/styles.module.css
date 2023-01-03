@@ -1,0 +1,12 @@
+.container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-rgba);
+  border-radius: 10px;
+  backdrop-filter: blur(20px);
+  z-index: 10;
+  transition: all 0.3s;
+  color: var(--inverse-font-color);
+}

@@ -12,6 +12,7 @@ type Props = {
 
 type State = {
   move: number;
+  pause: boolean;
 };
 
 export default class Ribbon extends Component<Props, State> {
@@ -19,6 +20,7 @@ export default class Ribbon extends Component<Props, State> {
     super(props);
     this.state = {
       move: 0,
+      pause: false,
     };
   }
 
@@ -29,19 +31,32 @@ export default class Ribbon extends Component<Props, State> {
 
   componentDidMount(): void {
     const component = document.querySelector(`.${this.props.name}`) as HTMLDivElement;
+    const step = 360 / this.props.contents.length;
 
     component.addEventListener("wheel", (eventWheel) => {
       eventWheel.preventDefault();
-      eventWheel.deltaY > 0 && this.setState({ move: this.state.move + 1 });
-      eventWheel.deltaY < 0 && this.setState({ move: this.state.move - 1 });
+      eventWheel.deltaY > 0 && this.setState({ move: this.state.move + step });
+      eventWheel.deltaY < 0 && this.setState({ move: this.state.move - step });
     });
 
-    setInterval(() => this.setState({ move: this.state.move + 1 }), 500);
+    component.addEventListener("mouseenter", () => {
+      this.setState({ pause: true });
+      component.addEventListener("mouseleave", () => {
+        this.setState({ pause: false });
+      });
+    });
+
+    setTimeout(() => {
+      this.setState({ pause: false });
+      setInterval(() => {
+        this.state.pause || this.setState({ move: this.state.move + step });
+      }, 4000);
+    }, 2000);
   }
 
   render() {
     return (
-      <div className={styles.container}>
+      <div className={styles.container} style={{ height: `calc(${this.props.height} + 20px)` }}>
         <div className={styles.ribbon + " " + this.props.name}>
           {this.props.contents.map((item, index, array) => (
             <Item
@@ -51,6 +66,7 @@ export default class Ribbon extends Component<Props, State> {
               transform={this.position(index, array.length)}
               radius={"-50vw"}
               backfaceVisibility="hidden"
+              transition={this.state.pause ? "all linear 300ms" : "all linear 2000ms"}
             >
               <a href="/">{item}</a>
             </Item>

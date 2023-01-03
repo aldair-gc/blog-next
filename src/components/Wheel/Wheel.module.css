@@ -2,7 +2,6 @@
   position: relative;
   height: 100%;
   width: 500px;
-  transition: all 0.3s;
   z-index: 9;
   perspective: 500px;
   transform-style: preserve-3d;

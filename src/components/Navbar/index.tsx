@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SITE_NAME } from "../../config/app-config";
+import MenuIcon from "./menu-icon";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
@@ -8,7 +9,7 @@ export default function Navbar() {
       <Link href={"/"}>
         <h1>{SITE_NAME}</h1>
       </Link>
-      <h1>Menu</h1>
+      <MenuIcon />
     </header>
   );
 }
